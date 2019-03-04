@@ -2,6 +2,20 @@
 yum -y install java-1.8.0-openjdk
 systemctl start jenkins
 
+ps aux | grep jenkis
+ps aux | grep jenkins
+http://192.168.5.9:8080
+cat /var/lib/jenkins/secrets/initialAdminPassword
+8e9d4db1c9d043639138643790977f8b
+
+yum -y install httpd
+mkdir -pv /var/www/html/deploy/packages
+chown -R jenkins:jenkins /var/www/html/deploy/
+systemctl start httpd
+systemctl enable httpd
 
 
-
+待解决问题:
+[root@zjs ~]# systemctl enable jenkins
+jenkins.service is not a native service, redirecting to /sbin/chkconfig.
+Executing /sbin/chkconfig jenkins on
